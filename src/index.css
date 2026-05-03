@@ -1,0 +1,135 @@
+/*
+ * ============================================================
+ * LSEI Design System — Global CSS (Tailwind v4 + Custom Tokens)
+ * ============================================================
+ *
+ * This file imports Tailwind CSS and defines all LSEI design
+ * tokens as CSS custom properties using Tailwind's @theme
+ * directive. This ensures every color, spacing value, and
+ * shadow aligns with the LSEI Design System document.
+ * ============================================================
+ */
+
+/* Import Tailwind CSS v4 — this enables all utility classes */
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────────────────
+ * @theme — LSEI Design Tokens
+ * Maps the design system's colors, fonts, and shadows
+ * to Tailwind CSS theme variables for use as utilities.
+ * Example: bg-deep-navy → background: #0A1A2F
+ * ────────────────────────────────────────────────────────── */
+@theme {
+  /* ── Primary Colors ── */
+  --color-deep-navy: #0A1A2F;
+  --color-white: #FFFFFF;
+
+  /* ── Accent: Electric Teal ramp ── */
+  --color-teal-50: #E6F7F5;
+  --color-teal-100: #B8E8E2;
+  --color-teal-200: #8AD9CE;
+  --color-teal-300: #5CCABA;
+  --color-teal-400: #2BB3A3;
+  --color-teal-500: #239A8C;
+  --color-teal-600: #1B7A6F;
+  --color-teal-700: #155B53;
+  --color-teal-800: #0E3D38;
+  --color-teal-900: #081F1D;
+
+  /* ── Deep Navy ramp ── */
+  --color-navy-50: #E8EBF0;
+  --color-navy-100: #C5CBD6;
+  --color-navy-200: #8E99AD;
+  --color-navy-300: #586884;
+  --color-navy-400: #2D4162;
+  --color-navy-500: #163050;
+  --color-navy-600: #0F2440;
+  --color-navy-700: #0A1A2F;
+  --color-navy-800: #071321;
+  --color-navy-900: #040C15;
+
+  /* ── Surface & Background ── */
+  --color-snow: #F7F8F9;
+  --color-soft-graphite: #E6E8EB;
+  --color-silver: #D1D4D9;
+  --color-cool-grey: #B8BCC3;
+  --color-slate: #9DA2AB;
+  --color-dark-slate: #5E6470;
+  --color-deep-surface: #0D1F35;
+  --color-midnight: #071321;
+
+  /* ── Text & Ink ── */
+  --color-charcoal: #1A1A1C;
+  --color-text-secondary: #5E6470;
+  --color-text-tertiary: #9DA2AB;
+
+  /* ── Font Family ── */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* ── Shadows (LSEI Elevation Model) ── */
+  --shadow-subtle: 0 1px 2px rgba(10, 26, 47, 0.04);
+  --shadow-low: 0 1px 3px rgba(10, 26, 47, 0.04), 0 1px 2px rgba(10, 26, 47, 0.06);
+  --shadow-medium: 0 4px 12px rgba(10, 26, 47, 0.08), 0 2px 4px rgba(10, 26, 47, 0.04);
+  --shadow-high: 0 12px 32px rgba(10, 26, 47, 0.12), 0 4px 8px rgba(10, 26, 47, 0.06);
+}
+
+/* ──────────────────────────────────────────────────────────
+ * Global Reset & Base Styles
+ * Sets up the page-level defaults: font, colors, smoothing.
+ * ────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Prevent horizontal overflow from animated elements */
+  overflow-x: hidden;
+}
+
+body {
+  /* LSEI uses Inter as the sole typeface */
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Smooth font rendering for crisp text on all OS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Deep Navy background so the hero fills seamlessly */
+  background-color: #0A1A2F;
+  color: #FFFFFF;
+
+  /* Remove any default margin */
+  margin: 0;
+}
+
+/* ──────────────────────────────────────────────────────────
+ * Utility: selection color (brand-consistent highlight)
+ * ────────────────────────────────────────────────────────── */
+::selection {
+  background-color: rgba(43, 179, 163, 0.3);
+  color: #FFFFFF;
+}
+
+/* ──────────────────────────────────────────────────────────
+ * Floating Animation for Network Nodes
+ * A very subtle vertical drift that makes nodes feel alive.
+ * The small translate values (0.3px) keep it enterprise-calm,
+ * not bouncy or playful.
+ * ────────────────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-0.3px);
+  }
+}
+
+/* Utility class applied to SVG circle nodes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
