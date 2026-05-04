@@ -12,6 +12,7 @@
  */
 
 import HeroSection from './components/HeroSection'
+import Projects from './components/Projects'
 
 function App() {
   return (
@@ -22,6 +23,11 @@ function App() {
            Full-viewport split-layout hero.
            See HeroSection.jsx for detailed documentation. */}
       <HeroSection />
+
+      {/* ── Projects Section ──
+           Grid of 6 strategic project overviews.
+           See Projects.jsx for detailed documentation. */}
+      <Projects />
     </main>
   )
 }
