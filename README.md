@@ -8,7 +8,23 @@ This repo is a simple React + Vite + TailwindCSS landing page for LSEI. The obje
 I have a few pointers on what to do and what to focus on, but I'm open to suggestions and feedback.
 
 **To Do List**
-[x] Have a better understanding of how web development works
-[x] Have a better understanding of how React works
-[x] Have a better understanding of how Vite works
-[x] Have a better understanding of how TailwindCSS works
+
+-[ ] Have a better understanding of how web development works
+
+- [x] Have a better understanding of how React works
+
+- [x] Have a better understanding of how Vite works
+
+- [x] Have a better understanding of how TailwindCSS works
+
+### Solar System Exploration, 1950s – 1960s
+
+- [ ] Mercury
+- [x] Venus
+- [x] Earth (Orbit/Moon)
+- [x] Mars
+- [ ] Jupiter
+- [ ] Saturn
+- [ ] Uranus
+- [ ] Neptune
+- [ ] Comet Haley
