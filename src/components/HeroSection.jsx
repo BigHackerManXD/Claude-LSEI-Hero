@@ -347,9 +347,9 @@ export default function HeroSection() {
                  Electric Teal bg, white text, 8px radius. */}
             <motion.div
               variants={ctaVariants}
-              className="flex flex-col  items-start gap-4 sm:gap-6 mt-8"
+              className="flex flex-col  items-start gap-4 sm:gap-6 mt-12"
               // className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6"
-            >
+              >
               {/* Primary CTA Button */}
               <a
                 href="#contact"
@@ -414,10 +414,11 @@ export default function HeroSection() {
                 </svg>
               </a>
 
-            {/*  Div above the Phone and Email to force into same row (group of related items)  */}
-            <div className="flex items-center gap-6 text-md text-white/60"
+             {/*  Div above the Phone and Email to force into same row (group of related items)  */}
+              <div className="flex items-center gap-6 text-md text-white/60"
               style={{
-                paddingBottom: '10px'
+                paddingBottom: '10px',
+
               }}
               >
               {/* Phone number — secondary action, understated */}
@@ -482,7 +483,7 @@ export default function HeroSection() {
                   d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                 </svg>
                 meijerkeegan@gmail.com</a>
-            </div>
+              </div>
             </motion.div>
 
             {/* ── Trust indicators ──

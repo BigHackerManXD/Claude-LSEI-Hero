@@ -75,45 +75,90 @@ const Projects = () => {
       style={{
         background: 'radial-gradient(circle at center, rgba(43, 179, 163, 0.08) 0%, transparent 70%)',
         padding: '0 3rem',
-        // border: '1px solid orange' HELPER
+        // border: '1px solid orange',
+        // marginTop: '3rem'
+        // HELPER
         
       }}>
       
       {/* Subtle Ambient Glow behind the grid */}
       <div 
-        className="
-          absolute 
-          top-1/2 
-          left-1/2 
-          -translate-x-1/2 
-          -translate-y-1/2 
-          w-full 
-          h-full 
-          pointer-events-none 
-          opacity-40
-          z-0
-          "
+
         
           style={{
           background: 'radial-gradient(circle at center, rgba(43, 179, 163, 0.08) 0%, transparent 70%)',
+          height: '10vh',
+          width: '100%',
         }}
       />
       
       {/* Step 4: Section Header.
           This contains the title and a short lead paragraph to set the context. */}
-      <div className=" mx-auto mb-16 relative z-10">
+      <div className="
+          mx-auto 
+          mb-16
+          relative 
+          z-10
+          py-16
+          px-12
+          "
+        >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <span className="text-[12px] font-medium tracking-[0.01em] uppercase mb-4 block text-teal-400">
-            Selected Works
-          </span>
-          <h2 className="text-[32px] md:text-[48px] font-bold mb-6 tracking-[-0.01em] md:tracking-[-0.02em] leading-[1.2] md:leading-[1.1] text-white">
+           { <span
+              className="
+                inline-block
+                rounded-md
+                px-3
+                py-1.5
+                text-xs
+                font-medium
+                tracking-wider
+                uppercase
+              "
+              style={{
+                backgroundColor: 'rgba(43, 179, 163, 0.1)',  // Teal wash on dark bg
+                color: '#2BB3A3',                               // Electric Teal text
+                letterSpacing: '0.08em',
+              }}
+            >
+              Selected Works
+            </span>}
+          <h2 
+            className="
+              text-[32px] 
+              md:text-[48px] 
+              font-bold 
+              mb-6 
+              tracking-[-0.01em] 
+              md:tracking-[-0.02em] 
+              leading-[1.2] 
+              md:leading-[1.1] 
+              text-white 
+            "
+          >
             Strategic impact through <br />
-            <span className="text-teal-400">technological precision.</span>
+              <span
+                style={{ color: '#2BB3A3' }}    // Electric Teal accent
+                className="relative inline-block"
+              >
+                technological precision.
+                {/* ── Underline accent ──
+                     A subtle teal line beneath "strategic" for extra emphasis.
+                     Animates in after the word appears. */}
+                <motion.span
+                  className="absolute -bottom-1 left-0 h-[2px] rounded-full"
+                  style={{ backgroundColor: 'rgba(43, 179, 163, 0.4)' }}
+                  initial={{ width: 0 }}
+                  animate={{ width: '100%' }}
+                  transition={{ duration: 0.8, delay: 1.2, ease: 'easeOut' }}
+                />
+              </span>
+
           </h2>
           <p className="text-text-tertiary text-[18px] font-normal leading-[1.75] max-w-2xl">
             We partner with industry leaders to solve complex challenges. Our projects 
