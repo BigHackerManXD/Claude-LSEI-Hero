@@ -58,26 +58,50 @@ const Projects = () => {
   return (
     /**
      * Step 3: The Section Wrapper.
-     * We use a white background (bg-white) and large vertical padding (py-24) 
+     * We use a blue navy background (bg-white) and large vertical padding (py-24) 
      * to give the section an authoritative, airy feel.
      */
-    <section className="bg-navy-700 py-24 px-6 md:px-12 lg:px-24 text-white font-sans relative overflow-hidden" id="projects"
-          style={{
-          background: 'radial-gradient(circle at center, rgba(43, 179, 163, 0.08) 0%, transparent 70%)',
-          paddingLeft: '3rem',
-        }}>
+    <section 
+      id='projects-section'
+      className="
+        relative  
+        lg: min-h-screen
+        w-full 
+        overflow-hidden
+        bg-navy-700 
+
+      "        
+      
+      style={{
+        background: 'radial-gradient(circle at center, rgba(43, 179, 163, 0.08) 0%, transparent 70%)',
+        padding: '0 3rem',
+        // border: '1px solid orange' HELPER
+        
+      }}>
       
       {/* Subtle Ambient Glow behind the grid */}
-      {/* <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none opacity-40 z-0"
-        style={{
+      <div 
+        className="
+          absolute 
+          top-1/2 
+          left-1/2 
+          -translate-x-1/2 
+          -translate-y-1/2 
+          w-full 
+          h-full 
+          pointer-events-none 
+          opacity-40
+          z-0
+          "
+        
+          style={{
           background: 'radial-gradient(circle at center, rgba(43, 179, 163, 0.08) 0%, transparent 70%)',
         }}
-      /> */}
+      />
       
       {/* Step 4: Section Header.
           This contains the title and a short lead paragraph to set the context. */}
-      <div className="max-w-[1200px] mx-auto mb-16 relative z-10">
+      <div className=" mx-auto mb-16 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -98,10 +122,23 @@ const Projects = () => {
         </motion.div>
       </div>
 
-      {/* Step 5: The Project Grid.
+      {/*
+          Step 5: The Project Grid.
           Using Tailwind's grid system: 1 column on mobile, 2 on tablet, 3 on desktop.
-          We also add a gap (gap-8) to keep the cards spaced out properly. */}
-      <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+          We also add a gap (gap-8) to keep the cards spaced out properly.
+          
+          This creates a responsive grid layout using Tailwind CSS:
+          max-w-[2400px] — caps the container width at 2400px
+          mx-auto — centers the container horizontally
+          grid — enables CSS Grid
+          grid-cols-1 — 1 column on mobile
+          md:grid-cols-2 — 2 columns on medium screens
+          lg:grid-cols-3 — 3 columns on large screens
+          gap-8 — spacing between grid items
+          relative — positions the container relative to its normal position
+          z-10 — sets stacking order above lower z-index elements
+      */}
+      <div className="max-w-[2400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
         
         {/* Step 6: Mapping through our data.
             This is where React shines — we take our list of 6 projects and 

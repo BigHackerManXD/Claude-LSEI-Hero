@@ -136,7 +136,8 @@ export default function HeroSection() {
       style={{
         /* LSEI Hero Gradient — subtle depth, not flat */
         background: 'linear-gradient(135deg, #0A1A2F 0%, #0D1F35 50%, #163050 100%)',
-        paddingLeft: '3rem',
+        padding: '0 3rem',
+        // border: '1px solid red', HELPER
       }}
     >
       {/* ════════════════════════════════════════════
@@ -151,7 +152,7 @@ export default function HeroSection() {
           top-0
           right-0
           w-full
-          lg:w-[58%]
+          lg:w-[55%]
           h-full
           z-0
         "
@@ -206,6 +207,11 @@ export default function HeroSection() {
           flex
           items-center
         "
+
+        style={{
+          // border: '1px solid green', HELPER
+          paddingBottom: '0px'
+        }}
       >
         <div
           className="
@@ -213,9 +219,9 @@ export default function HeroSection() {
             max-w-[1440px]
             mx-auto
             px-8
-            sm:px-12
-            lg:px-16
-            xl:px-20
+            sm:pt-12
+            lg:pt-16
+            xl:pt-20
             py-24
             sm:py-28
             lg:py-0
@@ -224,7 +230,7 @@ export default function HeroSection() {
           <motion.div
             className="
               w-full
-              lg:w-[42%]
+              lg:w-[45%]
               lg:max-w-[560px]
             "
             /* Framer Motion: animate children in staggered cascade */
@@ -370,6 +376,7 @@ export default function HeroSection() {
                   backgroundColor: '#2BB3A3',   // Electric Teal
                   color: '#FFFFFF',
                   borderRadius: '30px', 
+                  // This padding is for the button
                   padding: '12px 24px',         // LSEI button radius
                 }}
                 /* Hover: darken to teal-500; Active: darken further + slight scale */
@@ -493,7 +500,7 @@ export default function HeroSection() {
               "
               style={{
                 borderTop: '1px solid rgba(255, 255, 255, 0.06)',
-                margin: '10px 5px'  // Subtle divider
+                margin: '10px 1rem'  // Subtle divider
               }}
             >
               {/* Trust metric 1 */}
