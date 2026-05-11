@@ -18,7 +18,7 @@ const projectData = [
     title: "Financial Risk Command Center",
     category: "FinTech",
     description: "Developed a real-time monitoring dashboard for executive decision-making during market volatility.",
-    image: "https://images.unsplash.com/photo-1551288049-bbda38a5f9a2?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 3,
@@ -109,6 +109,7 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
+          {/* Selected Works Category logo*/}
            { <span
               className="
                 inline-block
@@ -133,15 +134,17 @@ const Projects = () => {
               text-[32px] 
               md:text-[48px] 
               font-bold 
-              mb-6 
               tracking-[-0.01em] 
               md:tracking-[-0.02em] 
-              leading-[1.2] 
-              md:leading-[1.1] 
+              leading-[1.05] 
+              md:leading-[1.05] 
               text-white 
+              mb-12
+              block
             "
+            style={{ marginBottom: '2rem' }}
           >
-            Strategic impact through <br />
+            Strategic impact through<br />
               <span
                 style={{ color: '#2BB3A3' }}    // Electric Teal accent
                 className="relative inline-block"
@@ -160,10 +163,24 @@ const Projects = () => {
               </span>
 
           </h2>
-          <p className="text-text-tertiary text-[18px] font-normal leading-[1.75] max-w-2xl">
-            We partner with industry leaders to solve complex challenges. Our projects 
-            blend executive-level strategy with deep engineering expertise.
+
+          <p 
+            className="
+              text-text-tertiary
+              text-[16px]
+              font-normal
+              leading-[1.75]
+              max-w-2xl 
+              mt-10"
+              
+          style={{ 
+            marginBottom: '2rem' 
+          }}
+          >
+            We partner with industry leaders to solve complex challenges. <br />
+            Our projects blend executive-level strategy with deep engineering expertise.
           </p>
+
         </motion.div>
       </div>
 
@@ -201,7 +218,20 @@ const Projects = () => {
              * Background: Deep Surface (#0D1F35), Border: 1px solid white/8%.
              * On hover, we lift 2px and maintain the feature teal border.
              */
-            className="group bg-deep-surface rounded-[12px] border border-white/8 border-l-[3px] border-l-teal-400 shadow-none overflow-hidden hover:shadow-medium transition-all duration-300 hover:-translate-y-[2px]"
+            className="
+              group 
+              bg-deep-surface 
+              rounded-[12px] 
+              border 
+              border-white/8 
+              border-l-[3px] 
+              shadow-none 
+              overflow-hidden 
+              hover:shadow-medium 
+              transition-all 
+              duration-300 
+              hover:-translate-y-[2px]"
+              // something to think abt -> border-l-teal-50
           >
             {/* Project Image Container */}
             <div className="aspect-[3/2] overflow-hidden bg-soft-graphite">
@@ -216,21 +246,35 @@ const Projects = () => {
             <div className="p-6">
               {/* Category Badge - Dark Mode Style */}
               <div className="mb-4">
-                <span className="inline-block bg-teal-400/10 text-teal-400 text-[12px] font-medium px-[10px] py-[4px] rounded-[6px] uppercase tracking-wide">
+                <span className="inline-block bg-teal-400/10 text-teal-400 text-[12px] font-medium px-[10px] px-[-3px] py-[4px] rounded-[6px] uppercase tracking-wide"
+                  style={{ 
+                    marginTop: '1rem',
+                    marginLeft: '1rem' 
+                  }}>
+                  
                   {project.category}
                 </span>
               </div>
 
               {/* Title and Description - Dark Mode Hierarchy */}
-              <h3 className="text-[22px] font-semibold mb-4 text-white group-hover:text-teal-400 transition-colors leading-[1.3]">
+              <h3 className="text-[22px] font-semibold mb-4 text-white group-hover:text-teal-400 transition-colors leading-[1.3]"
+                style={{
+                  marginLeft: '1rem'
+                }}>
                 {project.title}
               </h3>
-              <p className="text-cool-grey text-[16px] leading-[1.75] font-normal mb-6">
+              <p className="text-cool-grey text-[16px] leading-[1.75] font-normal mb-6"
+                  style={{
+                    marginLeft: '1rem'
+                }}>
                 {project.description}
               </p>
 
               {/* View Case Study Link - Dark Mode */}
-              <div className="flex items-center text-[14px] font-medium text-white/80 group-hover:text-teal-400 transition-colors cursor-pointer">
+              <div className="flex items-center text-[14px] font-medium text-white/80 group-hover:text-teal-400 transition-colors cursor-pointer"
+                  style={{
+                    margin: '1rem',
+                }}>
                 View Case Study
                 <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
