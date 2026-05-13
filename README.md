@@ -1,7 +1,6 @@
 # LSEI Landing Page
 
-Hello,
-My name is **BigHackerManXD** and I am a junior software engineer. To achieve growth, one must have a plan. This repo is the start of that journey. I plan to build my way up and get better at what I do and in the process, I document my journey (on Git and the website that will be built as part of this project), also to help others and serve as a time capsule of my journey. This repo is a portfolio of my work and a database of my learning and growth. This website will be a representation of my brand and my work, a place to showcase my skills and my journey to others. The website will be dynamic and is going to be updated and expended on regular intervals.
+To achieve growth, one must have a plan. This repo is the start of that journey. I plan to build my way up and get better at what I do and in the process, I document my journey (on Git and the website that will be built as part of this project), also to help others and serve as a time capsule of my journey. This repo is a portfolio of my work and a database of my learning and growth. This website will be a representation of my brand and my work, a place to showcase my skills and my journey to others. The website will be dynamic and is going to be updated and expended on regular intervals.
 
 The website is built with the help of multiple AI tools and services: `Claude code 4.6`, `Gemini 3 Flash`, `ChatGPT 4o` and `Windows Copilot`. Some of the writing will have the assistance of `Antigravity's autocomplete`.
 
@@ -87,3 +86,6 @@ To check the code for potential errors:
 ```bash
 npm run lint
 ```
+
+Hello,
+My name is **BigHackerManXD** and I am a junior software engineer.

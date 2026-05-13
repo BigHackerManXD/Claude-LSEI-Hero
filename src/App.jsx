@@ -13,6 +13,7 @@
 
 import HeroSection from './components/HeroSection'
 import Projects from './components/Projects'
+import CodeEditor from './components/CodeEditor'
 
 function App() {
   return (
@@ -28,6 +29,12 @@ function App() {
            Grid of 6 strategic project overviews.
            See Projects.jsx for detailed documentation. */}
       <Projects />
+
+      {/* ── Code Editor Section ──
+           Interactive code editor component.
+           See CodeEditor.jsx for detailed documentation. */}
+      <CodeEditor />
+      
     </main>
   )
 }

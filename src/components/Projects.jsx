@@ -10,7 +10,7 @@ const projectData = [
     id: 1,
     title: "Global Supply Chain Optimization",
     category: "Operations",
-    description: "Streamlined logistics for a Fortune 500 manufacturer, reducing overhead by 22% through predictive analytics.",
+    description: "Streamlined logistics for a Fortune 500 manufacturer, reducing overhead by 22% through predictive analytics.Streamlined logistics for a Fortune 500 manufacturer, reducing overhead by 22% through predictive analytics.Streamlined logistics for a Fortune 500 manufacturer, reducing overhead by 22% through predictive analytics.",
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"
   },
   {
@@ -82,15 +82,16 @@ const Projects = () => {
       }}>
       
       {/* Subtle Ambient Glow behind the grid */}
-      <div 
-
-        
+      <div class="flex flex-col justify-center items-center"
           style={{
           background: 'radial-gradient(circle at center, rgba(43, 179, 163, 0.08) 0%, transparent 70%)',
           height: '10vh',
           width: '100%',
         }}
-      />
+      >
+        <h1 class="m-auto text-center justify-center align-center items-center"> Here goes carrousel</h1>
+       
+      </div>
       
       {/* Step 4: Section Header.
           This contains the title and a short lead paragraph to set the context. */}
@@ -104,9 +105,14 @@ const Projects = () => {
           "
         >
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{
+            type: 'spring',
+            stiffness: 100,
+            damping: 15,
+            mass: 1,
+          }}
           viewport={{ once: true }}
         >
           {/* Selected Works Category logo*/}
@@ -200,7 +206,21 @@ const Projects = () => {
           relative — positions the container relative to its normal position
           z-10 — sets stacking order above lower z-index elements
       */}
-      <div className="max-w-[2400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+      {/* Creates the grid, 1 for small screen, 2 for medium screens and 3 for large.
+          Gives the grid a max-width of 2400px and centers it horizontally.
+          Sets the gap between grid items to 8px.
+          Sets the stacking order to above lower z-index elements.
+      */}
+      <div className="
+        max-w-[2400px] 
+        mx-auto 
+        grid 
+        grid-cols-1 
+        md:grid-cols-2 
+        lg:grid-cols-3 
+        gap-8 
+        relative 
+        z-10">
         
         {/* Step 6: Mapping through our data.
             This is where React shines — we take our list of 6 projects and 
@@ -208,10 +228,19 @@ const Projects = () => {
         {projectData.map((project, index) => (
           <motion.div
             key={project.id}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ 
+              type: 'spring',
+              stiffness: 100,
+              damping: 15,
+              mass: 1,
+            }}
             viewport={{ once: true }}
+            // style={{
+            //   paddingBottom: '4rem'
+            //remove? }}
+
             /**
              * Step 7: The Project Card Styling.
              * LSEI "Dark Card" pattern for navy backgrounds.
@@ -222,60 +251,87 @@ const Projects = () => {
               group 
               bg-deep-surface 
               rounded-[12px] 
-              border 
-              border-white/8 
-              border-l-[3px] 
               shadow-none 
               overflow-hidden 
               hover:shadow-medium 
-              transition-all 
-              duration-300 
-              hover:-translate-y-[2px]"
-              // something to think abt -> border-l-teal-50
+              flex 
+              flex-col
+              h-full
+              "
+              // something to think abt -> border-l-teal-50, hover:-translate-y-[2px]
           >
             {/* Project Image Container */}
-            <div className="aspect-[3/2] overflow-hidden bg-soft-graphite">
+            <div className="aspect-[3/2] w-full overflow-hidden bg-soft-graphite">
               <img 
                 src={project.image} 
                 alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="             
+                  h-full 
+                  object-cover 
+                  transition-transform 
+                  duration-500 
+                  group-hover:scale-110"
               />
             </div>
 
             {/* Project Content Container */}
-            <div className="p-6">
-              {/* Category Badge - Dark Mode Style */}
-              <div className="mb-4">
-                <span className="inline-block bg-teal-400/10 text-teal-400 text-[12px] font-medium px-[10px] px-[-3px] py-[4px] rounded-[6px] uppercase tracking-wide"
-                  style={{ 
-                    marginTop: '1rem',
-                    marginLeft: '1rem' 
-                  }}>
-                  
-                  {project.category}
-                </span>
+            {/* Content Wrapper: 
+              - Using flex-grow to take up all available vertical space 
+              - justify-between to distribute its children.
+            */}
+            <div className="p-6 flex flex-col flex-grow justify-between">
+              {/* Wrapper for top content to allow justify-between to work */}
+              <div>
+                {/* Category Badge - Dark Mode Style */}
+                <div className="mb-4">
+                  <span className="
+                    inline-block 
+                    bg-teal-400/10 
+                    text-teal-400 
+                    text-[12px] 
+                    font-medium 
+                    px-[10px] 
+                    px-[-3px] 
+                    py-[4px] 
+                    rounded-[6px] 
+                    uppercase 
+                    tracking-wide">
+                    {project.category}
+                  </span>
+                </div>
+
+                {/* Title and Description - Dark Mode Hierarchy */}
+                <h3 className="
+                  text-[22px] 
+                  font-semibold 
+                  mb-4 
+                  text-white 
+                  group-hover:text-teal-400 
+                  transition-colors 
+                  leading-[1.3]
+                  sm:min-h-[4.5rem]"
+                  >
+                  {project.title}
+                </h3>
+                <p className="flex flex-col gap-4 text-cool-grey text-[16px] leading-[1.75] font-normal mb-6">
+                  {project.description}
+                </p>
               </div>
 
-              {/* Title and Description - Dark Mode Hierarchy */}
-              <h3 className="text-[22px] font-semibold mb-4 text-white group-hover:text-teal-400 transition-colors leading-[1.3]"
-                style={{
-                  marginLeft: '1rem'
-                }}>
-                {project.title}
-              </h3>
-              <p className="text-cool-grey text-[16px] leading-[1.75] font-normal mb-6"
-                  style={{
-                    marginLeft: '1rem'
-                }}>
-                {project.description}
-              </p>
-
               {/* View Case Study Link - Dark Mode */}
-              <div className="flex items-center text-[14px] font-medium text-white/80 group-hover:text-teal-400 transition-colors cursor-pointer"
-                  style={{
-                    margin: '1rem',
-                }}>
-                View Case Study
+              <div className="
+                flex
+                items-center 
+                text-[14px] 
+                font-medium 
+                text-white/80 
+                group-hover:text-teal-400 
+                transition-colors 
+                cursor-pointer
+                gap-1" 
+                style={{marginTop: '1rem'}}
+              >
+                <p className="group-hover:underline">View Case Study</p>
                 <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
